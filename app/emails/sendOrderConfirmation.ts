@@ -226,11 +226,11 @@ export async function sendOrderConfirmation({
 
     console.log('Sending email with Resend API...');
     const response = await resend.emails.send({
-      from: 'Audiophile <onboarding@resend.dev>', // Should be replaced with verified domain
+      from: "https://audiophileecommerc.netlify.app/", // Should be replaced with verified domain
       to: email,
       subject: `Your Audiophile Order #${orderId} is Confirmed!`,
       html: htmlContent,
-      text: `Thanks for your purchase. Your order is being processed. Order ID: ${orderId}. Greeting: Hi ${customer.name}.`
+      text: `Thanks for your purchase. Your order is being processed. Order ID: ${orderId}. Greeting: Hi ${customer.name}.`,
     });
 
     console.log('Email sent successfully:', response);
